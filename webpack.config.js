@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
-// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
@@ -148,7 +148,7 @@ const plugins = () => {
 					},
 				})
 		),
-		// new HardSourceWebpackPlugin(),
+		new HardSourceWebpackPlugin(),
 	]
 
 	if (isProd) {

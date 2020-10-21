@@ -1,11 +1,35 @@
+@import './utils/vars'
+@import './modules/header'
+
 *, *::before, *::after
 	margin: 0
 	padding: 0
+	outline: none
+	transition: all .2s ease-in
 	box-sizing: border-box
 
 img
-	max-width: 100%
+	width: 100%
+	object-fit: cover
 	height: auto
+	display: block
+
+ul
+	list-style: none
+
+a
+	text-decoration: none
 
 html
-	font: 14px
+	font-family: sans-serif
+	font-size: 14px
+	font-weight: 400
+
+body
+	overflow: hidden
+
+.container
+	width: 100%
+	max-width: calc(1200px + 2rem)
+	padding: 0 1rem
+	margin: 0 auto

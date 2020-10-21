@@ -1,3 +1,3 @@
-import '~/js/main'
-import '~/assets/sass/lib'
+import '~/js/index'
+import '~/assets/sass/lib/lib'
 import '~/assets/sass/main'
