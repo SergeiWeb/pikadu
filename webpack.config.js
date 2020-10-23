@@ -10,6 +10,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
@@ -125,11 +126,12 @@ const plugins = () => {
 				{ from: `${PATHS.src}/static`, to: `` },
 			],
 		}),
+		new SpriteLoaderPlugin(),
 		new MiniCssExtractPlugin({
 			filename: filename('css'),
 		}),
 		new ImageminWebpackPlugin({
-			test: /\.(jpe?g|png|gif|svg)$/,
+			test: /\.(jpe?g|png|gif)$/,
 			disable: isProd,
 			pngquant: {
 				quality: '65',
@@ -225,6 +227,19 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: jsLoaders(),
+			},
+			{
+				test: /\.svg$/i,
+				// include: /.*_sprite\.svg/,
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+						options: {
+							extract: true,
+							publicPath: 'sprites/',
+						},
+					},
+				],
 			},
 		],
 	},

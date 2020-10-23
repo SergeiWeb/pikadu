@@ -1,11 +1,13 @@
 @import './utils/vars'
 @import './modules/header'
+@import './modules/posts'
+@import './modules/sidebar'
 
 *, *::before, *::after
 	margin: 0
 	padding: 0
 	outline: none
-	transition: all .2s ease-in
+	transition: all .3s linear
 	box-sizing: border-box
 
 img
@@ -13,6 +15,13 @@ img
 	object-fit: cover
 	height: auto
 	display: block
+
+.icon
+	width: 100%
+	height: 100%
+
+button
+	cursor: pointer
 
 ul
 	list-style: none
@@ -26,10 +35,15 @@ html
 	font-weight: 400
 
 body
-	overflow: hidden
+	overflow-x: hidden
+	background: #F5F5F5
 
 .container
 	width: 100%
 	max-width: calc(1200px + 2rem)
 	padding: 0 1rem
 	margin: 0 auto
+
+.content
+	display: flex
+	justify-content: space-between

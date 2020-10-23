@@ -1,5 +1,6 @@
 header
 	background: $primary
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15)
 	.navbar
 		display: flex
 		justify-content: space-between
@@ -21,7 +22,7 @@ header
 					line-height: 1.57rem
 					color: inherit
 				&:hover
-					color: $text-gray
+					color: lighten($yellow, 30%)
 		&-search
 			display: flex
 			align-items: center
@@ -38,6 +39,7 @@ header
 			background: none
 			width: 13.9rem
 			height: 1.57rem
+			color: $text-gray
 			&::placeholder
 				color: $gray-light
 				font-size: 1rem
