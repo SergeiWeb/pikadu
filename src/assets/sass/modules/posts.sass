@@ -9,12 +9,12 @@
 			padding: 2.5rem 2.47rem 1.57rem
 		&-title
 			color: $text-black
-			font-weight: 700
+			+SFSemibold
 			font-size: 1.14rem
 			line-height: 1.7rem
 		&-text
 			color: $text-black
-			font-weight: 400
+			+SFRegular
 			font-size: 1rem
 			line-height: 1.57rem
 			margin-top: 1.35rem
@@ -26,7 +26,7 @@
 				color: $gray-light
 				margin-right: 0.7rem
 				a
-					font-weight: 400
+					+SFRegular
 					font-size: 1rem
 					line-height: 1.57rem
 					color: inherit
@@ -59,7 +59,7 @@
 			&__counter
 				font-size: 1rem
 				line-height: 1.57rem
-				font-weight: 400
+				+SFRegular
 				color: inherit
 				margin-left: 0.5rem
 			&:hover
@@ -78,16 +78,20 @@
 				&-name
 					font-size: 0.85rem
 					line-height: 1.42rem
-					font-weight: 400
+					+SFRegular
 					color: $gray
 					a
 						color: inherit
 				&-time
 					font-size: 0.85rem
 					line-height: 1.42rem
-					font-weight: 400
+					+SFRegular
 					color: $gray-light
 				&-photo
 					display: inline-block
 					width: 2.42rem
 					height: 2.42rem
+					border-radius: 4px
+					overflow: hidden
+		&:first-child
+			margin-top: 0

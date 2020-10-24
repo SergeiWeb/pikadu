@@ -1,17 +1,26 @@
 {
-	"name": "pikadu",
+	"name": "miko",
 	"version": "1.0.0",
-	"description": "pikadu project",
+	"description": "miko project",
 	"private": true,
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack --mode production",
 		"watch": "cross-env NODE_ENV=development webpack --mode development --watch",
 		"server": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 3 version"
-	],
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version",
+			"last 1 ie version"
+		]
+	},
 	"keywords": [
 		"js",
 		"javascript",
@@ -57,7 +66,6 @@
 		"pug-loader": "^2.4.0",
 		"sass-loader": "^9.0.3",
 		"style-loader": "^1.2.1",
-		"svg-sprite-loader": "^5.0.0",
 		"terser-webpack-plugin": "^4.0.0",
 		"webp-loader": "^0.6.0",
 		"webpack": "^4.44.1",

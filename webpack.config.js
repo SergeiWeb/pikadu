@@ -10,7 +10,6 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
@@ -74,10 +73,13 @@ const cssLoaders = extra => {
 			loader: 'postcss-loader',
 			options: { config: { path: `postcss.config.js` } },
 		},
-		{
-			loader: 'group-css-media-queries-loader',
-		},
 	]
+
+	if (isProd) {
+		loaders.push({
+			loader: 'group-css-media-queries-loader',
+		})
+	}
 
 	if (extra) {
 		loaders.push(extra)
@@ -126,12 +128,11 @@ const plugins = () => {
 				{ from: `${PATHS.src}/static`, to: `` },
 			],
 		}),
-		new SpriteLoaderPlugin(),
 		new MiniCssExtractPlugin({
 			filename: filename('css'),
 		}),
 		new ImageminWebpackPlugin({
-			test: /\.(jpe?g|png|gif)$/,
+			test: /\.(jpe?g|png|gif|svg)$/,
 			disable: isProd,
 			pngquant: {
 				quality: '65',
@@ -150,11 +151,12 @@ const plugins = () => {
 					},
 				})
 		),
+		new ImageminWebpWebpackPlugin(),
 		new HardSourceWebpackPlugin(),
 	]
 
 	if (isProd) {
-		base.push(new BundleAnalyzerPlugin(), new ImageminWebpWebpackPlugin())
+		base.push(new BundleAnalyzerPlugin())
 	}
 
 	return base
@@ -227,19 +229,6 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: jsLoaders(),
-			},
-			{
-				test: /\.svg$/i,
-				// include: /.*_sprite\.svg/,
-				use: [
-					{
-						loader: 'svg-sprite-loader',
-						options: {
-							extract: true,
-							publicPath: 'sprites/',
-						},
-					},
-				],
 			},
 		],
 	},

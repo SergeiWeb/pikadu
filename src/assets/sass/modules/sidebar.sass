@@ -1,2 +1,110 @@
 .sidebar
 	flex-basis: 30%
+	&-user
+		.user
+			&-block
+				background: $white
+			&-header
+				display: flex
+				justify-content: space-between
+				align-items: center
+				border: 1px solid $border
+				background: $gray-lighten
+				padding: 1rem 1.75rem
+			&-account
+				display: flex
+				align-items: center
+				&__avatar
+					width: 2.85rem
+					height: 2.85rem
+					border-radius: 50%
+				&__name
+					display: inline-block
+					font-size: 1.1rem
+					line-height: 1.7rem
+					color: $text-gray
+					margin-left: 1.7rem
+					+SFSemibold
+			&-off
+				width: 1.42rem
+				height: 1.42rem
+				background: none
+				border: none
+				.icon
+					fill: $text-black
+			&-actions
+				border: 1px solid $border
+				border-top: none
+			&-li
+				&__link
+					display: block
+					font-size: 1rem
+					line-height: 1.57rem
+					padding: 1.14rem
+					padding-left: 3.4rem
+					color: $text-gray
+					background: $white
+					+SFRegular
+					&:hover
+						background: lighten($yellow-lighten, 3%)
+						color: $yellow
+				&.active
+					.user-li__link
+						border-right: 3px solid $yellow
+						background: $yellow-lighten
+						color: $yellow
+
+	&-btn
+		margin: 1.42rem 0
+		width: 100%
+
+	&-comment
+		margin: 1.42rem 0
+		.comment
+			&-block
+				background: $white
+			&-header
+				border: 1px solid $border
+				background: $gray-lighten
+				padding: 1rem 1.75rem
+				&__title
+					font-size: 1rem
+					line-height: 1.7rem
+					color: $text-gray
+					+SFSemibold
+			&-body
+				padding: 1.57rem 2.85rem 2.1rem 1.78rem
+				border: 1px solid $border
+				border-top: none
+				&__title
+					font-size: 1rem
+					line-height: 1.7rem
+					color: $text-gold
+					margin-bottom: 0.71rem
+					+SFSemibold
+				&__text
+					font-size: 1rem
+					line-height: 1.57rem
+					color: $text-black
+					+SFRegular
+
+	&-ad
+		margin: 1.42rem 0
+		background: $white
+		background-image: url('../assets/img/promo.jpg')
+		width: 100%
+		height: 260px
+		border: 1px solid $border
+		position: relative
+		&::before
+			content: 'Реклама'
+			position: absolute
+			top: 0
+			right: 0
+			padding: 0 1.85rem
+			color: $white
+			background: #C4C4C4
+			text-align: center
+			font-size: 0.85rem
+			line-height: 1.42rem
+			+SFRegular

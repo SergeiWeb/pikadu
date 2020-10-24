@@ -1,4 +1,6 @@
 @import './utils/vars'
+@import './utils/mixins'
+@import './utils/fonts'
 @import './modules/header'
 @import './modules/posts'
 @import './modules/sidebar'
@@ -30,9 +32,8 @@ a
 	text-decoration: none
 
 html
-	font-family: sans-serif
 	font-size: 14px
-	font-weight: 400
+	+SFRegular
 
 body
 	overflow-x: hidden
@@ -47,3 +48,25 @@ body
 .content
 	display: flex
 	justify-content: space-between
+	margin-top: 2.1rem
+
+.btn
+	&-publish
+		display: flex
+		justify-content: space-between
+		align-items: center
+		color: $white
+		border: none
+		background: $yellow
+		font-size: 1.14rem
+		line-height: 1.7rem
+		padding: 0.9rem 7.5rem 0.9rem 1.35rem
+		border-radius: 4px
+		+SFRegular
+		.icon
+			width: 0.78rem
+			height: 1rem
+			fill: $white
+		&:hover
+			transform: scale(0.99)
+			background: $primary

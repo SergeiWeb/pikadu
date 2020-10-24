@@ -1,0 +1,16 @@
+@mixin font($font_name, $file_name, $weight, $style)
+	@font-face
+		font-family: $font_name
+		font-display: swap
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+		font-weight: #{$weight}
+		font-style: #{$style}
+
+
+@mixin SFRegular
+	font-family: 'SFProDisplay-Regular', sans-serif
+	font-weight: 400
+
+@mixin SFSemibold
+	font-family: 'SFProDisplay-Semibold', sans-serif
+	font-weight: 600
