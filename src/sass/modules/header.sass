@@ -28,7 +28,7 @@ header
 			align-items: center
 	.search
 		border: 1px solid #D9D9D9
-		border-radius: 4px
+		border-radius: $trs
 		background: $white
 		padding: 0.35rem 0.71rem
 		display: flex
@@ -54,3 +54,7 @@ header
 			height: 1.14rem
 			background: none
 			cursor: pointer
+
+@media screen and ( max-width: 760px )
+	header
+		background: #000

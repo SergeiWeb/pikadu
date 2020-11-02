@@ -4,11 +4,14 @@
 		.user
 			&-block
 				background: $white
+				border-radius: $trs
 			&-header
 				display: flex
 				justify-content: space-between
 				align-items: center
 				border: 1px solid $border
+				border-top-left-radius: $trs
+				border-top-right-radius: $trs
 				background: $gray-lighten
 				padding: 1rem 1.75rem
 			&-account
@@ -26,8 +29,7 @@
 					margin-left: 1.7rem
 					+SFSemibold
 			&-off
-				width: 1.42rem
-				height: 1.42rem
+				size: 1.42rem
 				background: none
 				border: none
 				.icon
@@ -35,6 +37,8 @@
 			&-actions
 				border: 1px solid $border
 				border-top: none
+				border-bottom-left-radius: $trs
+				border-bottom-right-radius: $trs
 			&-li
 				&__link
 					display: block
@@ -50,7 +54,7 @@
 						color: $yellow
 				&.active
 					.user-li__link
-						border-right: 3px solid $yellow
+						// border-right: 0.2rem solid $yellow
 						background: $yellow-lighten
 						color: $yellow
 
@@ -63,8 +67,11 @@
 		.comment
 			&-block
 				background: $white
+				border-radius: $trs
 			&-header
 				border: 1px solid $border
+				border-top-left-radius: $trs
+				border-top-right-radius: $trs
 				background: $gray-lighten
 				padding: 1rem 1.75rem
 				&__title
@@ -75,6 +82,8 @@
 			&-body
 				padding: 1.57rem 2.85rem 2.1rem 1.78rem
 				border: 1px solid $border
+				border-bottom-left-radius: $trs
+				border-bottom-right-radius: $trs
 				border-top: none
 				&__title
 					font-size: 1rem
@@ -88,14 +97,18 @@
 					color: $text-black
 					+SFRegular
 
-	&-ad
+	&-promo
 		margin: 1.42rem 0
-		background: $white
-		background-image: url('../assets/img/promo.jpg')
-		width: 100%
-		height: 260px
+		size: 100% 260px // width height
+		background: $white url('../assets/images/promo.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
 		border: 1px solid $border
+		box-sizing: content-box
+		border-radius: $trs
 		position: relative
+		overflow: hidden
 		&::before
 			content: 'Реклама'
 			position: absolute
@@ -108,3 +121,7 @@
 			font-size: 0.85rem
 			line-height: 1.42rem
 			+SFRegular
+
+@media screen and ( max-width: 760px )
+	.sibebar
+		background: #000

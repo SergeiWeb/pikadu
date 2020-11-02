@@ -1,15 +1,12 @@
 @import './utils/vars'
 @import './utils/mixins'
 @import './utils/fonts'
-@import './modules/header'
-@import './modules/posts'
-@import './modules/sidebar'
 
 *, *::before, *::after
 	margin: 0
 	padding: 0
 	outline: none
-	transition: all .3s linear
+	transition: all .25s linear
 	box-sizing: border-box
 
 img
@@ -61,7 +58,7 @@ body
 		font-size: 1.14rem
 		line-height: 1.7rem
 		padding: 0.9rem 7.5rem 0.9rem 1.35rem
-		border-radius: 4px
+		border-radius: $trs
 		+SFRegular
 		.icon
 			width: 0.78rem
@@ -70,3 +67,9 @@ body
 		&:hover
 			transform: scale(0.99)
 			background: $primary
+		&:active
+			transform: scale(0.975)
+
+@import './modules/header'
+@import './modules/posts'
+@import './modules/sidebar'

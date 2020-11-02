@@ -1,5 +1,7 @@
-import '~/js/index'
-import '~/assets/sass/lib/lib'
-import '~/assets/sass/main'
+import '~/sass/library/library.scss'
+import '~/sass/main.sass'
+import '~/scripts/index.js'
 
-import './assets/img/icons.svg'
+// if (module.hot) {
+// 	module.hot.accept()
+// }
