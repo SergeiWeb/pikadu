@@ -12,22 +12,15 @@ module.exports = merge(common, {
 	devServer: {
 		historyApiFallback: true,
 		contentBase: PATHS.build,
-		hot: true,
+		watchContentBase: true,
 		open: true,
-		// overlay: true,
 		port: 8080,
 		compress: true,
 		inline: true,
-		// useLocalIp: true,
-		clientLogLevel: 'info',
 		overlay: {
 			warnings: true,
 			errors: true,
 		},
-	},
-
-	stats: {
-		colors: true,
 	},
 
 	plugins: [new webpack.HotModuleReplacementPlugin()],

@@ -47,6 +47,29 @@ body
 	justify-content: space-between
 	margin-top: 2.1rem
 
+.navbar
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 1.14rem 0
+	&-logo
+		width: 3.57rem
+	&-nav
+		flex: 2
+		display: flex
+		align-items: center
+		margin-left: 3.75rem
+		&__link
+			padding: 0 0.53rem
+			color: $gray-lighten
+			a
+				font-size: 1rem
+				line-height: 1.57rem
+				color: inherit
+				+SFRegular
+			&:hover
+				color: lighten($yellow, 30%)
+
 .btn
 	&-publish
 		display: flex
@@ -73,3 +96,4 @@ body
 @import './modules/header'
 @import './modules/posts'
 @import './modules/sidebar'
+@import './modules/footer'
