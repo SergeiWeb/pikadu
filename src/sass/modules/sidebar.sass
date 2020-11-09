@@ -58,9 +58,19 @@
 						background: $yellow-lighten
 						color: $yellow
 
-	&-btn
-		margin: 1.42rem 0
-		width: 100%
+	&-buttons
+		&__btn
+			margin: 1.42rem 0
+			width: 100%
+			&--secondary
+				display: flex
+				justify-content: center
+				align-items: center
+				position: relative
+				.icon
+					position: absolute
+					left: 1.35rem
+					size: 0.78rem 1rem
 
 	&-comment
 		margin: 1.42rem 0
@@ -121,3 +131,29 @@
 			font-size: 0.85rem
 			line-height: 1.42rem
 			+SFRegular
+
+@media screen and ( max-width: 980px )
+	.sidebar
+		order: -1
+		&-buttons
+			display: flex
+			align-items: center
+			justify-content: space-between
+			&__btn
+				&--publish
+					margin-right: 1rem
+					width: 60%
+					.icon
+						margin-right: 6rem
+				&--secondary
+					width: 25%
+					margin: 0 0.4rem
+		&-container
+			display: flex
+			justify-content: space-between
+		&-comment
+			margin-right: 3%
+			flex-basis: 80%
+		&-promo
+			flex-basis: 50%
+			height: auto

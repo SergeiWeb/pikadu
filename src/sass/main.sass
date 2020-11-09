@@ -85,27 +85,30 @@ body
 .btn
 	&-publish
 		display: flex
-		justify-content: space-between
+		justify-content: center
 		align-items: center
 		color: $white
 		border: none
 		background: $yellow
 		font-size: 1.14rem
 		line-height: 1.7rem
-		padding: 0.9rem 7.5rem 0.9rem 1.35rem
+		padding: 0.9rem 1.35rem
 		border-radius: $trs
+		position: relative
 		+SFRegular
 		.icon
 			width: 0.78rem
 			height: 1rem
 			fill: $white
+			position: absolute
+			left: 1.35rem
 		&:hover
 			transform: scale(0.99)
 			background: $primary
 		&:active
 			transform: scale(0.975)
 
-	&-add
+	&-secondary
 		display: flex
 		justify-content: center
 		align-items: center
@@ -136,3 +139,7 @@ body
 @import './modules/newpost'
 @import './modules/sidebar'
 @import './modules/footer'
+
+@media screen and ( max-width: 980px )
+	.content
+		flex-direction: column
