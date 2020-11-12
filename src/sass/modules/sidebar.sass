@@ -1,6 +1,51 @@
 .sidebar
 	flex-basis: 30%
+	&-login
+		margin-bottom: 1.42rem
+		.login
+			&-form
+				background: $white
+				border-radius: $trs
+				&__title
+					border: 1px solid $border
+					border-top-left-radius: $trs
+					border-top-right-radius: $trs
+					background: $gray-lighten
+					padding: 1rem 1.78rem
+					font-size: 1rem
+					line-height: 1.7rem
+					color: $text-gray
+					+SFSemibold
+				&__content
+					display: flex
+					flex-direction: column
+					align-items: center
+					padding: 1.78rem
+					border: 1px solid $border
+					border-bottom-left-radius: $trs
+					border-bottom-right-radius: $trs
+					border-top: none
+					text-align: center
+				&__input
+					width: 100%
+					margin-bottom: 1rem
+				&__forget
+					font-size: 1.1rem
+					color: $gray
+					&:hover
+						color: $yellow
+				&__signin
+					padding: 0.6rem 1rem
+					width: 100%
+					margin: 1rem 0
+				&__signup
+					font-size: 1.1rem
+					color: $gray
+					&:hover
+						color: $yellow
+
 	&-user
+		margin-bottom: 1.42rem
 		.user
 			&-block
 				background: $white
@@ -13,7 +58,10 @@
 				border-top-left-radius: $trs
 				border-top-right-radius: $trs
 				background: $gray-lighten
-				padding: 1rem 1.75rem
+				padding: 1rem 1.78rem
+				&__account
+					display: flex
+					align-items: center
 			&-account
 				display: flex
 				align-items: center
@@ -28,6 +76,13 @@
 					color: $text-gray
 					margin-left: 1.7rem
 					+SFSemibold
+			&-edit
+				border: none
+				background: none
+				size: 1rem
+				margin-left: 1rem
+				.icon
+					fill: $gray
 			&-off
 				size: 1.42rem
 				background: none
@@ -39,6 +94,8 @@
 				border-top: none
 				border-bottom-left-radius: $trs
 				border-bottom-right-radius: $trs
+				&.hide
+					display: none
 			&-li
 				&__link
 					display: block
@@ -58,7 +115,39 @@
 						background: $yellow-lighten
 						color: $yellow
 
+			&-editor
+				padding: 1.78rem
+				border: 1px solid $border
+				border-bottom-left-radius: $trs
+				border-bottom-right-radius: $trs
+				border-top: none
+		.editor
+			display: none
+			&.visible
+				display: block
+			&-title
+				font-size: 1rem
+				line-height: 1.7rem
+				color: $text-gray
+				margin-bottom: 0.8rem
+				+SFSemibold
+			&-container
+				display: flex
+				flex-direction: column
+			&-label
+				font-size: 1rem
+				color: $text-gray
+				margin-bottom: 1rem
+				+SFRegular
+			&-input
+				width: 100%
+				margin-top: 0.6rem
+			&-btn
+				width: 100%
+				padding: 0.5rem 1rem
+
 	&-buttons
+		display: none
 		&__btn
 			margin: 1.42rem 0
 			width: 100%
@@ -73,7 +162,7 @@
 					size: 0.78rem 1rem
 
 	&-comment
-		margin: 1.42rem 0
+		margin: 0 0 1.42rem 0
 		.comment
 			&-block
 				background: $white
@@ -83,14 +172,14 @@
 				border-top-left-radius: $trs
 				border-top-right-radius: $trs
 				background: $gray-lighten
-				padding: 1rem 1.75rem
+				padding: 1rem 1.78rem
 				&__title
 					font-size: 1rem
 					line-height: 1.7rem
 					color: $text-gray
 					+SFSemibold
 			&-body
-				padding: 1.57rem 2.85rem 2.1rem 1.78rem
+				padding: 1.78rem 2.85rem 2.14rem 1.78rem
 				border: 1px solid $border
 				border-bottom-left-radius: $trs
 				border-bottom-right-radius: $trs
@@ -108,7 +197,7 @@
 					+SFRegular
 
 	&-promo
-		margin: 1.42rem 0
+		margin: 0 0 1.42rem 0
 		size: 100% 260px // width height
 		background: $white url('../assets/images/promo.jpg')
 		background-repeat: no-repeat
