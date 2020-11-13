@@ -39,9 +39,9 @@ const listUser = [
 	},
 	{
 		id: '02',
-		email: 'mich@gmail.com',
+		email: 'stef@gmail.com',
 		password: '67890',
-		displayName: 'MichA',
+		displayName: 'Stefany',
 	},
 ]
 
@@ -141,7 +141,11 @@ const setPosts = {
 						что дальнейшее развитие различных форм деятельности требуют
 						определения и уточнения соответствующий условий активизации.`,
 			tags: ['свежее', 'новое', 'горячее', 'мое', 'случайность'],
-			author: 'sergei@gmail.com',
+			author: {
+				displayName: 'Sasha',
+				photo:
+					'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxLc3AqP7pqq7vVYhM0upTIWK97kwLfwY5GA&usqp=CAU',
+			},
 			date: '10.10.2020, 09:55:00',
 			like: 15,
 			comments: 20,
@@ -176,7 +180,11 @@ const setPosts = {
 						что дальнейшее развитие различных форм деятельности требуют
 						определения и уточнения соответствующий условий активизации.`,
 			tags: ['свежее', 'новое', 'горячее', 'мое', 'случайность'],
-			author: 'mich@gmail.com',
+			author: {
+				displayName: 'Mary',
+				photo:
+					'https://cs8.pikabu.ru/post_img/2017/01/28/10/1485626384190086634.jpg',
+			},
 			date: '10.11.2020, 08:35:00',
 			like: 45,
 			comments: 55,
@@ -205,7 +213,6 @@ const showAllPosts = () => {
 
 	setPosts.allPosts.forEach(
 		({ title, text, tags, like, comments, author, date }) => {
-
 			postHTML += `
 			<section class="post">
 				<div class="post-article">
@@ -214,7 +221,8 @@ const showAllPosts = () => {
 					<ul class="post-tags">
 						${tags
 							.map(
-								tag => `<li class="post-tags__tag"><a href="#">#${tag}</a></li>`
+								tag =>
+									`<li class="post-tags__tag"><a href="/${tag}">#${tag}</a></li>`
 							)
 							.join('')}
 					</ul>
@@ -246,11 +254,15 @@ const showAllPosts = () => {
 					</div>
 					<div class="post-author author">
 						<div class="author-about">
-							<span class="author-name"><a href="#">${author}</a></span>
+							<span class="author-name"><a href="#">${author.displayName}</a></span>
 							<span class="author-time">${date}</span>
 						</div>
 						<a href="#" class="author-photo">
-							<img src="./assets/images/user.jpg" />
+							${
+								author.photo
+									? `<img src="${author.photo}" />`
+									: `<svg class="icon"><use xlink:href="./assets/svg/icons.svg#user"></use></svg>`
+							}
 						</a>
 					</div>
 				</div>
