@@ -15,19 +15,15 @@ const loginForm = document.querySelector('.login-form')
 const emailInput = document.querySelector('.login-form__email')
 const passwordInput = document.querySelector('.login-form__password')
 const loginSignup = document.querySelector('.login-form__signup')
-
 const userElem = document.querySelector('.user')
 const userNameElem = document.querySelector('.user-account__name')
 const userNavElem = document.querySelector('.user-actions')
 const userAvatarElem = document.querySelector('.user-account__avatar')
-
 const exitElem = document.querySelector('.user-off')
 const editElem = document.querySelector('.user-edit')
 const editContainer = document.querySelector('.user-editor')
-
 const editUsername = document.querySelector('.editor-username')
 const editPhotoURL = document.querySelector('.editor-photo')
-
 const postsWrapper = document.querySelector('.posts')
 
 const listUser = [
