@@ -1,5 +1,8 @@
 .create
-	margin-bottom: 6rem
+	display: none
+	flex-direction: column
+	&.visible
+		display: flex
 	&-form
 		&__title
 			width: 100%
@@ -19,6 +22,17 @@
 			font-size: 1rem
 			padding: 1.64rem 2.2rem
 			min-height: 25.85rem
+			margin-bottom: 1.14rem
+			color: $text-gray
+			border-radius: $trs
+			+SFRegular
+			&::placeholder
+				color: $text-gray
+		&__tags
+			width: 100%
+			border: 1px solid $border
+			font-size: 1.14rem
+			padding: 1.5rem 2.2rem
 			color: $text-gray
 			border-radius: $trs
 			+SFRegular
@@ -33,7 +47,5 @@
 				&__publication
 					width: 26.42rem
 					margin-right: 2.57rem
-			.btn-add
+			.btn-secondary:not(:last-child)
 				margin-right: 0.85rem
-				&::last-child
-					margin-right: 0

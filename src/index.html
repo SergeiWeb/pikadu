@@ -4,6 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Picadu</title>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js" defer></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+
+		<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js" defer></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js" defer></script>
 	</head>
 	<body>
 		<header class="header">
@@ -41,7 +49,48 @@
 
 		<div class="content container">
 			<main class="main posts"></main>
-			<!-- /.main posts -->
+			<main class="main create">
+				<form action="#" class="create-form">
+					<input
+						type="text"
+						name="title"
+						placeholder="Заголовок поста"
+						class="create-form__title"
+					/>
+					<textarea
+						class="create-form__text"
+						name="text"
+						placeholder="Текст вашего поста"
+					></textarea>
+					<input
+						type="text"
+						name="tags"
+						placeholder="Добавить хештег"
+						class="create-form__tags"
+					/>
+					<div class="create-form__actions actions">
+						<button type="submit" class="actions-btn__publication btn-publish">
+							<svg class="icon">
+								<use xlink:href="./assets/svg/icons.svg#fire"></use>
+							</svg>
+							Опубликовать пост
+						</button>
+						<button type="button" class="actions-btn__video btn-secondary">
+							<svg class="icon">
+								<use xlink:href="./assets/svg/icons.svg#video"></use>
+							</svg>
+							Видео
+						</button>
+						<button type="button" class="actions-btn__photo btn-secondary">
+							<svg class="icon">
+								<use xlink:href="./assets/svg/icons.svg#photo"></use>
+							</svg>
+							Фото
+						</button>
+					</div>
+				</form>
+			</main>
+
 			<aside class="sidebar">
 				<div class="sidebar-login login">
 					<form action="" class="login-form">
@@ -75,11 +124,11 @@
 							<div class="user-header__account">
 								<a href="#" class="user-account">
 									<img
-										src="./assets/images/user.jpg"
+										src="./assets/svg/user.svg"
 										alt="avatar"
 										class="user-account__avatar"
 									/>
-									<h3 class="user-account__name">John Doe</h3>
+									<h3 class="user-account__name">Username</h3>
 								</a>
 								<button class="user-edit">
 									<svg class="icon">
