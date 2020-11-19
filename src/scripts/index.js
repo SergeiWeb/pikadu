@@ -277,24 +277,24 @@ const showAllPosts = () => {
 						<div class="post-actions">
 							<button class="post-button likes">
 								<svg class="icon">
-									<use xlink:href="./assets/svg/icons.svg#like"></use>
+									<use xlink:href="./svg/icons.svg#like"></use>
 								</svg>
 								<span class="post-button__counter likes-counter">${like}</span>
 							</button>
 							<button class="post-button comments">
 								<svg class="icon">
-									<use xlink:href="./assets/svg/icons.svg#comment"></use>
+									<use xlink:href="./svg/icons.svg#comment"></use>
 								</svg>
 								<span class="post-button__counter comments-counter">${comments}</span>
 							</button>
 							<button class="post-button save">
 								<svg class="icon">
-									<use xlink:href="./assets/svg/icons.svg#save"></use>
+									<use xlink:href="./svg/icons.svg#save"></use>
 								</svg>
 							</button>
 							<button class="post-button share">
 								<svg class="icon">
-									<use xlink:href="./assets/svg/icons.svg#share"></use>
+									<use xlink:href="./svg/icons.svg#share"></use>
 								</svg>
 							</button>
 						</div>
@@ -307,7 +307,7 @@ const showAllPosts = () => {
 								${
 									author.photo
 										? `<img class="icon" src="${author.photo}" />`
-										: `<svg class="icon"><use xlink:href="./assets/svg/icons.svg#user"></use></svg>`
+										: `<svg class="icon"><use xlink:href="./svg/icons.svg#user"></use></svg>`
 								}
 							</a>
 						</div>
