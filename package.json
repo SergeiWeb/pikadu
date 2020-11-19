@@ -46,7 +46,6 @@
 		"csv-loader": "^3.0.3",
 		"eslint": "^7.13.0",
 		"eslint-loader": "^4.0.2",
-		"file-loader": "^6.2.0",
 		"fs": "^0.0.1-security",
 		"group-css-media-queries-loader": "^3.0.2",
 		"html-webpack-plugin": "^5.0.0-alpha.11",
