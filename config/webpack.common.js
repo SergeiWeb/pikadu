@@ -2,7 +2,7 @@ const PATHS = require('./paths')
 const fs = require('fs')
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
@@ -22,9 +22,10 @@ module.exports = {
 	target: 'web',
 
 	output: {
-		filename: `${PATHS.assets}js/[name].js`,
+		filename: `js/[name].js`,
 		path: PATHS.build,
 		publicPath: './',
+		assetModuleFilename: 'img/[name][ext]',
 	},
 
 	experiments: {
@@ -52,23 +53,23 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: `${PATHS.src}/${PATHS.assets}images`,
-					to: `${PATHS.assets}images`,
-				},
-				{
-					from: `${PATHS.src}/${PATHS.assets}fonts`,
-					to: `${PATHS.assets}fonts`,
-				},
-				{
-					from: `${PATHS.src}/${PATHS.assets}svg`,
-					to: `${PATHS.assets}svg`,
-				},
-				{ from: `${PATHS.src}/static`, to: '' },
-			],
-		}),
+		// new CopyWebpackPlugin({
+		// 	patterns: [
+		// 		{
+		// 			from: `${PATHS.src}/${PATHS.assets}images`,
+		// 			to: `images`,
+		// 		},
+		// 		{
+		// 			from: `${PATHS.src}/${PATHS.assets}fonts`,
+		// 			to: `fonts`,
+		// 		},
+		// 		{
+		// 			from: `${PATHS.src}/${PATHS.assets}svg`,
+		// 			to: `svg`,
+		// 		},
+		// 		{ from: `${PATHS.src}/static`, to: '' },
+		// 	],
+		// }),
 
 		new ImageminWebpWebpackPlugin({
 			config: [
@@ -109,14 +110,20 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
+				test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'img/[name][ext]',
+				},
 				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'assets/images/[name].[ext]',
-						},
-					},
+					// {
+					// 	loader: 'file-loader',
+					// 	options: {
+					// 		name: '[name].[ext]',
+					// 		outputPath: 'img',
+					// 		publicPath: 'assets',
+					// 	},
+					// },
 					{
 						loader: 'webp-loader',
 						options: {
@@ -136,6 +143,13 @@ module.exports = {
 			{
 				test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
 				type: 'asset/inline',
+			},
+			{
+				test: /\.svg$/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'svg/[name][ext]',
+				},
 			},
 		],
 	},
