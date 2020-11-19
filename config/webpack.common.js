@@ -24,7 +24,7 @@ module.exports = {
 	output: {
 		filename: `js/[name].js`,
 		path: PATHS.build,
-		publicPath: './',
+		publicPath: '/',
 		assetModuleFilename: 'img/[name][ext]',
 	},
 
@@ -80,7 +80,7 @@ module.exports = {
 					},
 				},
 			],
-			detailedLogs: true,
+			// detailedLogs: true,
 		}),
 
 		...PAGES.map(
@@ -112,18 +112,7 @@ module.exports = {
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
 				type: 'asset/resource',
-				generator: {
-					filename: 'img/[name][ext]',
-				},
 				use: [
-					// {
-					// 	loader: 'file-loader',
-					// 	options: {
-					// 		name: '[name].[ext]',
-					// 		outputPath: 'img',
-					// 		publicPath: 'assets',
-					// 	},
-					// },
 					{
 						loader: 'webp-loader',
 						options: {
